@@ -32,7 +32,7 @@ class Character:
     def attack(self, enemy):
         payload = {"defender": enemy}
         
-        return requests.put(base_uri + "characters/" + self.name.replace(" ","%20") + "/attack",
+        return requests.post(base_uri + "characters/" + self.name.replace(" ","%20") + "/attack",
                             data = json.dumps(payload),
                             headers={'Authorization':token})
     
